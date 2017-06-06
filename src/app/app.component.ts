@@ -3,8 +3,11 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { StandardPage } from '../pages/standard/standard';
+import { FibonacciPage } from '../pages/fibonacci/fibonacci';
+import { TshirtPage } from '../pages/tshirt/tshirt';
+
+import { SettingsPage } from '../pages/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +15,19 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = StandardPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, icon: any, component: any }>;
+
+  settingPage: { title: string, icon: any, component: any };
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
+    this.settingPage = { title: 'Settings', icon: 'settings', component: SettingsPage };
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Standard', icon: 'keypad', component: StandardPage },
+      { title: 'Fibonacci', icon: 'funnel', component: FibonacciPage },
+      { title: 'T-Shirt', icon: 'shirt', component: TshirtPage },
     ];
 
   }
