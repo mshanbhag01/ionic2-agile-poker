@@ -1,3 +1,4 @@
+import { StoryPointPage } from '../pages/storypoint/storypoint';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -17,7 +18,8 @@ import { PokerCardService } from '../service/pokercard';
     StandardPage,
     FibonacciPage,
     TshirtPage,
-    SettingsPage
+    SettingsPage,
+    StoryPointPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { PokerCardService } from '../service/pokercard';
     StandardPage,
     FibonacciPage,
     TshirtPage,
-    SettingsPage
+    SettingsPage,
+    StoryPointPage
   ],
   providers: [
     StatusBar,

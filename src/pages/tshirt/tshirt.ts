@@ -1,3 +1,4 @@
+import { StoryPointPage } from '../storypoint/storypoint';
 import { PokerCardService } from '../../service/pokercard';
 import { PokerCard } from '../../model/pokercard';
 import { Component } from '@angular/core';
@@ -16,5 +17,8 @@ export class TshirtPage {
   ngOnInit() {
     this.pokercards = this.pokerCardService.getTShirtPokerCards();
   }
-
+  
+  onCardSelected(pokercard: PokerCard) {
+    this.navCtrl.push(StoryPointPage, { selectedCard: pokercard });
+  }
 }

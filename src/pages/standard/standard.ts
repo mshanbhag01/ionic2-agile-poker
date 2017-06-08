@@ -1,3 +1,4 @@
+import { StoryPointPage } from '../storypoint/storypoint';
 import { PokerCard } from '../../model/pokercard';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -15,5 +16,9 @@ export class StandardPage implements OnInit {
 
   ngOnInit() {
     this.pokercards = this.pokerCardService.getStandardPokerCards();
+  }
+
+    onCardSelected(pokercard: PokerCard) {
+    this.navCtrl.push(StoryPointPage, { selectedCard: pokercard });
   }
 }
