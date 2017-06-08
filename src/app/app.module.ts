@@ -1,3 +1,4 @@
+import { StoryPointPage } from '../pages/storypoint/storypoint';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,18 +7,19 @@ import { MyApp } from './app.component';
 import { StandardPage } from '../pages/standard/standard';
 import { FibonacciPage } from '../pages/fibonacci/fibonacci';
 import { TshirtPage } from '../pages/tshirt/tshirt';
-import {SettingsPage} from '../pages/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { PokerCardService } from '../service/pokercard';
 @NgModule({
   declarations: [
     MyApp,
-   StandardPage,
+    StandardPage,
     FibonacciPage,
     TshirtPage,
-    SettingsPage
+    SettingsPage,
+    StoryPointPage
   ],
   imports: [
     BrowserModule,
@@ -29,12 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StandardPage,
     FibonacciPage,
     TshirtPage,
-    SettingsPage
+    SettingsPage,
+    StoryPointPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    PokerCardService
   ]
 })
-export class AppModule {}
+export class AppModule { }
