@@ -1,3 +1,5 @@
+import { PokerCardService } from '../../service/pokercard';
+import { PokerCard } from '../../model/pokercard';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -6,8 +8,13 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tshirt.html'
 })
 export class TshirtPage {
-   constructor(public navCtrl: NavController, public navParams: NavParams) {
-   
+  pokercards: PokerCard[];
+  constructor(public navCtrl: NavController, private pokerCardService: PokerCardService) {
+
+  }
+
+  ngOnInit() {
+    this.pokercards = this.pokerCardService.getTShirtPokerCards();
   }
 
 }

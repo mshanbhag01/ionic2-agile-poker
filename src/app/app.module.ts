@@ -6,15 +6,15 @@ import { MyApp } from './app.component';
 import { StandardPage } from '../pages/standard/standard';
 import { FibonacciPage } from '../pages/fibonacci/fibonacci';
 import { TshirtPage } from '../pages/tshirt/tshirt';
-import {SettingsPage} from '../pages/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { PokerCardService } from '../service/pokercard';
 @NgModule({
   declarations: [
     MyApp,
-   StandardPage,
+    StandardPage,
     FibonacciPage,
     TshirtPage,
     SettingsPage
@@ -34,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    PokerCardService
   ]
 })
-export class AppModule {}
+export class AppModule { }
