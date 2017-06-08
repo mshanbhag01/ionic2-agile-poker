@@ -1,24 +1,13 @@
-import { StoryPointPage } from '../storypoint/storypoint';
 import { PokerCard } from '../../model/pokercard';
-import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { PokerCardService } from '../../service/pokercard';
+import { Component } from '@angular/core';
+import { CardsPageBaseComponent } from '../cards.base';
 
 @Component({
   selector: 'page-standard',
   templateUrl: 'standard.html'
 })
-export class StandardPage implements OnInit {
-  pokercards: PokerCard[];
-  constructor(public navCtrl: NavController, private pokerCardService: PokerCardService) {
-
-  }
-
-  ngOnInit() {
-    this.pokercards = this.pokerCardService.getStandardPokerCards();
-  }
-
-    onCardSelected(pokercard: PokerCard) {
-    this.navCtrl.push(StoryPointPage, { selectedCard: pokercard });
+export class StandardPage extends CardsPageBaseComponent {
+   protected getPokerCards(): PokerCard[] {
+    return this.pokerCardService.getStandardPokerCards();
   }
 }
