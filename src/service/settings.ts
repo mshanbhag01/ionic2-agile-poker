@@ -1,11 +1,14 @@
 import { Settings } from '../model/settings';
 
 export class SettingsService {
+    settings: Settings;
+    constructor() {
+        this.settings = new Settings();
+        this.settings.cardBackground = '#2d3f5b';
+        this.settings.cardValueBackground = '#ffffff';
+    }
 
     public getSettings(): Settings {
-        const settings = new Settings();
-        settings.cardBackground = 'red';
-        settings.cardValueBackground='green';
-        return settings;
+        return this.settings;
     }
 }

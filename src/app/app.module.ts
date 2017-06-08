@@ -13,7 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PokerCardService } from '../service/pokercard';
 import { SettingsService } from '../service/settings';
-
+import {ColorPickerModule} from 'ngx-color-picker';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +26,7 @@ import { SettingsService } from '../service/settings';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    ColorPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -8,5 +8,11 @@
 </ion-header>
 
 <ion-content padding>
+    <!--<button ion-button [(colorPicker)]="color" [cpPosition]="cpPosition">click me</button>-->
+    <ion-label stacked>Card Background</ion-label>
+    <button ion-button full [(colorPicker)]="settings.cardBackground" [style.background]="settings.cardBackground" [cpPosition]="cpPosition"></button>
+
+    <ion-label stacked>Card Value Background</ion-label>
+    <button ion-button full [(colorPicker)]="settings.cardValueBackground" [style.background]="settings.cardValueBackground" [cpPosition]="cpPosition"></button>
 
 </ion-content>
