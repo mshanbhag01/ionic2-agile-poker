@@ -6,6 +6,7 @@ export class SettingsService {
         this.settings = new Settings();
         this.settings.cardBackground = '#2d3f5b';
         this.settings.cardValueBackground = '#ffffff';
+        this.settings.tapToReveal = false;
     }
 
     public getSettings(): Settings {

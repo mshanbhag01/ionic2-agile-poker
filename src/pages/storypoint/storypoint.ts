@@ -12,6 +12,8 @@ export class StoryPointPage implements OnInit {
 
   public pokercard: PokerCard;
   public settings: Settings;
+  public tapToReveal: boolean;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private settingsService: SettingsService) {
@@ -20,9 +22,14 @@ export class StoryPointPage implements OnInit {
 
   ngOnInit(): void {
     this.settings = this.settingsService.getSettings();
+    this.tapToReveal = this.settings.tapToReveal;
   }
 
   onValueClick() {
     this.navCtrl.pop();
+  }
+
+  onShowValue() {
+    this.tapToReveal = false;
   }
 }
