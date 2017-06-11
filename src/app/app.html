@@ -7,16 +7,24 @@
 
     <ion-content>
         <ion-list>
-            <ion-item>
-                <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon [name]="p.icon"></ion-icon>
+            <ion-item-group>
+                <ion-item>
+                    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-start></ion-icon>
         {{p.title}}
       </button>
-            </ion-item>
+                </ion-item>
 
+                <ion-item>
+                    <button menuClose ion-item (click)="openPage(settingPage)">
+        <ion-icon [name]="settingPage.icon" item-start></ion-icon>
+        {{settingPage.title}}
+      </button>
+                </ion-item>
+            </ion-item-group>
         </ion-list>
     </ion-content>
-
+    <!--
     <ion-footer>
         <ion-item>
             <button menuClose ion-item (click)="openPage(settingPage)">
@@ -24,7 +32,7 @@
         {{settingPage.title}}
       </button>
         </ion-item>
-    </ion-footer>
+    </ion-footer>-->
 
 </ion-menu>
 
