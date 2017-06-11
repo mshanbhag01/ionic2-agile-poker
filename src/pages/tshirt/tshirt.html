@@ -11,8 +11,8 @@
     <ion-grid>
         <ion-row>
             <ion-col col-4 *ngFor="let pokercard of pokercards">
-                <ion-card class="pokercard" (click)="onCardSelected(pokercard)">
-                    <div class="pokercardvalue">{{pokercard.value}}</div>
+                <ion-card class="pokercard" [style.background]="settings.cardBackground" (click)="onCardSelected(pokercard)">
+                    <div class="pokercardvalue" [style.color]="settings.cardValueBackground">{{pokercard.value}}</div>
                 </ion-card>
             </ion-col>
         </ion-row>

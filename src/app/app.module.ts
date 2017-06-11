@@ -12,6 +12,10 @@ import { SettingsPage } from '../pages/settings/settings';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PokerCardService } from '../service/pokercard';
+import { SettingsService } from '../service/settings';
+import {ColorPickerModule} from 'ngx-color-picker';
+import {IonicStorageModule} from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -19,11 +23,13 @@ import { PokerCardService } from '../service/pokercard';
     FibonacciPage,
     TshirtPage,
     SettingsPage,
-    StoryPointPage
+    StoryPointPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    ColorPickerModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,7 +44,8 @@ import { PokerCardService } from '../service/pokercard';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PokerCardService
+    PokerCardService,
+    SettingsService
   ]
 })
 export class AppModule { }

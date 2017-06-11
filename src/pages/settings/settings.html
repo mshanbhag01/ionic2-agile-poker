@@ -8,5 +8,23 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-list no-lines>
+        <ion-item>
+            <ion-label> Tap to reveal the card</ion-label>
+            <ion-toggle [(ngModel)]="settings.tapToReveal"></ion-toggle>
+        </ion-item>
 
+        <ion-item>
+            <!--<button ion-button [(colorPicker)]="color" [cpPosition]="cpPosition">click me</button>-->
+            <ion-label>Card Background</ion-label>
+        </ion-item>
+        <button ion-button full round [(colorPicker)]="settings.cardBackground" [style.background]="settings.cardBackground" [cpPosition]="cpPosition"></button>
+
+
+        <ion-item>
+            <ion-label>Card Value Background</ion-label>
+        </ion-item>
+        <button ion-button full round [(colorPicker)]="settings.cardValueBackground" [style.background]="settings.cardValueBackground" [cpPosition]="cpPosition"></button>
+
+    </ion-list>
 </ion-content>

@@ -8,7 +8,8 @@ import { FibonacciPage } from '../pages/fibonacci/fibonacci';
 import { TshirtPage } from '../pages/tshirt/tshirt';
 
 import { SettingsPage } from '../pages/settings/settings';
-
+import { SettingsService } from '../service/settings';
+import {Storage} from '@ionic/storage';
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,8 +22,12 @@ export class MyApp {
 
   settingPage: { title: string, icon: any, component: any };
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    private settingsService: SettingsService,
+    private storage: Storage) {
     this.initializeApp();
+    this.settingsService.storage = this.storage;
     this.settingPage = { title: 'Settings', icon: 'settings', component: SettingsPage };
     this.pages = [
       { title: 'Standard', icon: 'keypad', component: StandardPage },
