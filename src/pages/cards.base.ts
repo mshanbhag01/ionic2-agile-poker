@@ -21,8 +21,11 @@ export abstract class CardsPageBaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.settings = this.settingsService.getSettings();
-        this.pokercards = this.getPokerCards();
+        this.settingsService.getSettings().then((res) => {
+        this.settings = res;
+            this.pokercards = this.getPokerCards();
+        });
+
     }
 
     protected abstract getPokerCards(): PokerCard[];

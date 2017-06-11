@@ -9,8 +9,8 @@
 
 <ion-content padding>
 
-    <ion-card *ngIf="tapToReveal" class="pokercard" style="height: 100%; width: 100%; background: black">
-        <div [style.color]="settings.cardValueBackground" style="font-size: 4.0em; font-weight: bold;width: 100%;height:100%; top: 40%;position: absolute;" (click)="onShowValue()">Tap to reveal</div>
+    <ion-card *ngIf="tapToReveal" class="pokercard" style="height: 100%; width: 100%; background: black" (click)="onShowValue()">
+        <div [style.color]="settings.cardValueBackground" style="font-size: 4.0em; font-weight: bold;width: 100%;height:100%; top: 40%;position: absolute;">Tap to reveal</div>
     </ion-card>
 
     <ion-card *ngIf="!tapToReveal" class="pokercard" [style.background]="settings.cardBackground" style="height: 100%; width: 100%" (click)="onValueClick()">

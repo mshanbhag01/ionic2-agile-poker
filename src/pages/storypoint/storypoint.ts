@@ -11,7 +11,7 @@ import { SettingsService } from '../../service/settings';
 export class StoryPointPage implements OnInit {
 
   public pokercard: PokerCard;
-  public settings: Settings;
+  public settings: Settings=new Settings();
   public tapToReveal: boolean;
 
   constructor(public navCtrl: NavController,
@@ -21,8 +21,10 @@ export class StoryPointPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.settings = this.settingsService.getSettings();
-    this.tapToReveal = this.settings.tapToReveal;
+    this.settingsService.getSettings().then((res) => {
+      this.settings = res;
+      this.tapToReveal = this.settings.tapToReveal;
+    });
   }
 
   onValueClick() {
